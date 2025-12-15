@@ -19,5 +19,3 @@ Este proyecto implementa un sistema inteligente para analizar entrevistas utiliz
 2. `pip install -r requirements.txt`
 3. Instalar FFmpeg en el sistema.
 
-##  Equipo
-- [Tu Nombre]
