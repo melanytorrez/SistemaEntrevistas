@@ -1,1 +1,1 @@
-pip install numpy pandas opencv-python deepface torch transformers moviepy openai-whisper scipy matplotlib
+pip install numpy pandas opencv-python deepface torch transformers moviepy openai-whisper scipy matplotlib  tf-keras
