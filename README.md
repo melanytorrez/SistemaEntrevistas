@@ -1,21 +1,20 @@
-# Sistema de Análisis de Entrevistas Multimodal
+# Sistema de Analisis de Entrevistas Multimodal
 
-Este proyecto implementa un sistema inteligente para analizar entrevistas utilizando visión computacional y procesamiento de lenguaje natural.
+Este proyecto implementa un sistema inteligente para analizar entrevistas utilizando vision computacional y procesamiento de lenguaje natural (NLP). El objetivo es detectar congruencias e incongruencias emocionales combinando el analisis facial con el analisis semantico del discurso.
 
-##  Tecnologías
-- **Visión:** DeepFace (CNN pre-entrenada para detección de emociones).
-- **Audio:** OpenAI Whisper (ASR para transcripción).
-- **NLP:** Transformers (HuggingFace) para análisis de sentimiento en texto.
-- **Integración:** Sincronización temporal de señales multimodales.
+## Tecnologias Utilizadas
+- Vision: DeepFace (Wrapper para modelos CNN pre-entrenados como VGG-Face).
+- Audio: OpenAI Whisper (Sistema ASR para transcripcion robusta).
+- NLP: Transformers (HuggingFace) para analisis de sentimiento en texto (Modelo RoBERTa).
+- Integracion: Sincronizacion temporal de señales multimodales.
 
-##  Estructura
-- `/data`: Videos de validación y Ground Truth.
-- `/src`: Código fuente de los módulos.
-- `/models`: Pesos de modelos descargados.
-- `/output`: Resultados del análisis (JSON, Gráficas).
+## Estructura del Proyecto
+- /data: Contiene los videos de validacion y el archivo Excel de Ground Truth.
+- /src: Codigo fuente de los modulos de procesamiento (Python).
+- /models: Almacenamiento local de pesos de modelos descargados.
+- /output: Resultados del analisis (Archivos JSON y Graficas generadas).
 
-##  Instalación
-1. Crear entorno virtual.
-2. `pip install -r requirements.txt`
-3. Instalar FFmpeg en el sistema.
-
+## Instalacion y Requisitos
+1. Crear un entorno virtual en Python 3.x.
+2. Instalar dependencias: `pip install -r requirements.txt`
+3. Instalar FFmpeg en el sistema operativo y agregarlo al PATH.

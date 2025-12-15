@@ -1,0 +1,51 @@
+BITACORA DE DESARROLLO - SISTEMA DE ANALISIS DE ENTREVISTAS
+
+======================================================================
+DIA 0: PREPARACION Y DATOS
+Fecha: 14/12/2025
+======================================================================
+
+1. GENERACION DE DATASET
+   - Actividad: Grabacion de 3 videos de validacion (30-60 segundos).
+   - Escenarios cubiertos:
+     a) Video 1(49): Cambio emocional brusco (Positivo a Negativo).
+     b) Video 2(14): Incongruencia (Expresion facial vs. Contenido del texto).
+     c) Video 3(12): Linea base neutral (Lectura tecnica).
+   - Ground Truth: Creacion del archivo 'validacion_dataset.xlsx' con etiquetado manual de emociones y tiempos para calculo posterior de precision.
+
+2. PREPARACION DEL ENTORNO
+   - Estructura de directorios creada (/data, /src, /models, /output).
+   - Instalacion de dependencias base: OpenCV, DeepFace, Whisper, Torch, Transformers.
+
+======================================================================
+DIA 1: CONFIGURACION, PROTOTIPADO Y DISEÑO
+Fecha: 15/12/2025
+ESTADO: COMPLETADO
+======================================================================
+
+1. RESOLUCION DE INCIDENCIAS TECNICAS
+   - Incidencia: Conflicto de dependencias entre TensorFlow 2.x y Keras.
+     Solucion: Instalacion de paquete 'tf-keras' para compatibilidad con RetinaFace.
+   - Incidencia: Whisper fallaba por ausencia de binarios de FFmpeg en Windows.
+     Solucion: Instalacion via Winget y actualizacion de variables de entorno (PATH).
+   - Incidencia: Deprecacion de metodos en MoviePy 2.0.
+     Solucion: Refactorizacion de codigo reemplazando .subclip() por .subclipped().
+
+2. PRUEBAS UNITARIAS (SMOKE TESTS)
+   - Modulo de Vision (DeepFace):
+     Script: src/test_vision_day1.py
+     Resultado: Descarga exitosa de pesos VGG-Face. Inferencia correcta en frame estatico (Confianza > 90%).
+   - Modulo de Audio (Whisper):
+     Script: src/test_audio_day1.py
+     Resultado: Extraccion de audio exitosa y transcripcion correcta utilizando modelo 'base' en CPU.
+
+3. INVESTIGACION DE MODELOS NLP
+   - Se evaluaron opciones para Analisis de Sentimiento.
+   - Seleccion: Modelo 'j-hartmann/emotion-english-distilroberta-base'.
+   - Justificacion: Clasifica texto en las mismas 7 emociones universales (Ekman) que utiliza DeepFace, facilitando la integracion directa sin mapeos complejos.
+   - Prueba: Script src/test_nlp_day1.py ejecutado exitosamente.
+
+4. REUNION DE CIERRE Y DISEÑO
+   - Se definio la Arquitectura de Datos (ver archivo DISENO_ARQUITECTURA.md).
+   - Se establecio el formato JSON como interfaz de comunicacion entre modulos.
+   - Planificacion Dia 2: Desarrollo de bucles de procesamiento completo para Video y Audio.
