@@ -79,3 +79,11 @@ ESTADO: EN PROCESO (Modulo Utilidades Completado)
      - Detecci贸n correcta de propiedades de video de prueba (video1.mp4).
      - Generaci贸n exitosa de JSON de prueba en /output/test_output_utils.json cumpliendo el esquema de dise帽o.
    - Conclusi贸n: El m贸dulo 'utils' es estable y est谩 listo para ser importado por los m贸dulos de Audio y Video.
+3. IMPLEMENTACION DEL MODULO DE VISION (CNN)
+   - Archivo: src/vision_module_day2.py
+   - Funcionalidad: Procesamiento de video frame a frame con sampling (1 fps).
+   - Tecnolog韆: DeepFace (OpenCV backend) para detecci髇 de emociones.
+   - Salida: Generaci髇 de JSON en /results/vision_analysis.json.
+   - Incidencias resueltas:
+     a) Error de serializaci髇 JSON (float32 de numpy vs float nativo).
+     b) Gesti髇 de archivos grandes en Git (uso de gitignore para carpeta data/).
