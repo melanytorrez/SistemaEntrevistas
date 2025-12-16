@@ -1,0 +1,6 @@
+2025-12-15 22:24:21,113 - INFO - Test de logging iniciado (esto debería salir en el archivo .log)
+2025-12-15 22:24:21,114 - INFO - Buscando video: video1.mp4
+2025-12-15 22:24:21,114 - INFO - Obteniendo propiedades...
+2025-12-15 22:24:21,303 - INFO - Propiedades del video obtenidas: {'fps': 30.07, 'total_frames': 1487, 'duration_seconds': 49.46}
+2025-12-15 22:24:21,303 - INFO - Probando guardado de JSON estructurado...
+2025-12-15 22:24:21,305 - INFO - Archivo guardado exitosamente: C:\Users\LENOVO\Documents\SISTEMAS-INTELIGENTES\ENTREVISTAS-FINAL\output\test_output_utils.json

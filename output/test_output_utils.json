@@ -1,0 +1,17 @@
+{
+    "meta": {
+        "module": "test_module",
+        "timestamp": "2025-12-15T22:24:21.303228",
+        "count": 2
+    },
+    "data": [
+        {
+            "id": 1,
+            "status": "test"
+        },
+        {
+            "id": 2,
+            "status": "ok"
+        }
+    ]
+}
