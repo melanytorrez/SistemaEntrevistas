@@ -39,4 +39,8 @@ wheels/
 *~
 .DS_Store
 
-
+# Datos y videos
+data/
+*.zip
+*.pdf
+*.mp4
