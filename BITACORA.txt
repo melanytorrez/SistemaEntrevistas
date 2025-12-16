@@ -50,40 +50,41 @@ ESTADO: COMPLETADO
    - Se establecio el formato JSON como interfaz de comunicacion entre modulos.
    - Planificacion Dia 2: Desarrollo de bucles de procesamiento completo para Video y Audio.
 
-   ======================================================================
+======================================================================
 DIA 2: DESARROLLO PARALELO DE MODULOS
 Fecha: 16/12/2025
-ESTADO: EN PROCESO (Modulo Utilidades Completado)
+ESTADO: COMPLETADO
 ======================================================================
 
 1. IMPLEMENTACION DE INFRAESTRUCTURA COMUN (MODULO UTILIDADES)
-   - Objetivo: Crear funciones transversales (Helpers) para estandarizar Logs, Rutas y Formatos de Salida, facilitando el trabajo de los equipos de Audio y Video.
+   - Objetivo: Crear funciones transversales (Helpers) para estandarizar Logs, Rutas y Formatos de Salida.
    - Archivo base: src/utils.py
    - Funcionalidades implementadas:
-     a) Sistema de Logging Centralizado (setup_logger): 
-        - Configuraci贸n dual: Salida a consola (INFO) y persistencia en archivo .log (dentro de carpeta /logs).
-        - Permite trazabilidad de errores durante ejecuciones largas.
-     b) Gesti贸n de Rutas y Archivos (get_video_path): 
-        - Abstracci贸n de rutas absolutas para evitar errores de "File not found" en diferentes entornos.
-     c) Extracci贸n de Metadatos (get_video_properties): 
-        - Uso optimizado de OpenCV para leer FPS y conteo de frames sin decodificar todo el video.
-     d) Estandarizaci贸n de Salida (save_analysis_json): 
-        - Funci贸n wrapper que recibe datos crudos y los envuelve en la estructura JSON definida en el D铆a 1 (metadata + data).
-     e) Conversi贸n Temporal (ms_to_timestamp):
-        - Utilidad para convertir milisegundos a formato legible (MM:SS:mmm) para reportes humanos.
+     a) Sistema de Logging Centralizado (setup_logger): Salida dual consola/archivo.
+     b) Gesti贸n de Rutas (get_video_path): Abstracci贸n para evitar errores de rutas.
+     c) Estandarizaci贸n de Salida (save_analysis_json): Wrapper para garantizar estructura JSON consistente.
 
 2. PRUEBAS DE INTEGRACION DE UTILIDADES
    - Script de prueba: test_utilities_module()
-   - Resultados de validaci贸n:
-     - Log generado correctamente en carpeta /logs con timestamp de ejecuci贸n.
-     - Detecci贸n correcta de propiedades de video de prueba (video1.mp4).
-     - Generaci贸n exitosa de JSON de prueba en /output/test_output_utils.json cumpliendo el esquema de dise帽o.
-   - Conclusi贸n: El m贸dulo 'utils' es estable y est谩 listo para ser importado por los m贸dulos de Audio y Video.
+   - Resultados: Log generado correctamente y JSON de prueba validado en /output.
+
 3. IMPLEMENTACION DEL MODULO DE VISION (CNN)
    - Archivo: src/vision_module_day2.py
-   - Funcionalidad: Procesamiento de video frame a frame con sampling (1 fps).
-   - Tecnolog韆: DeepFace (OpenCV backend) para detecci髇 de emociones.
-   - Salida: Generaci髇 de JSON en /results/vision_analysis.json.
-   - Incidencias resueltas:
-     a) Error de serializaci髇 JSON (float32 de numpy vs float nativo).
-     b) Gesti髇 de archivos grandes en Git (uso de gitignore para carpeta data/).
+   - Funcionalidad: Procesamiento frame a frame con sampling (1 fps).
+   - Tecnolog铆a: DeepFace (OpenCV backend).
+   - Salida: JSON en /results/vision_analysis.json.
+   - Incidencias resueltas: Serializaci贸n de tipos numpy (float32) a JSON nativo.
+
+4. IMPLEMENTACION DEL MODULO DE AUDIO (ASR + NLP)
+   - Archivo: src/audio_module.py
+   - Enfoque: Procesamiento en cascada (Pipeline) Video -> Audio -> Texto -> Emoci贸n.
+   - Tecnolog铆as Implementadas:
+     a) OpenAI Whisper (modelo 'base'): Transcripci贸n robusta con timestamps precisos.
+     b) BERT Multilingual (bhadresh-savani): An谩lisis de sentimiento con soporte nativo para Espa帽ol.
+   - Incidencias T茅cnicas Resueltas:
+     a) Compatibilidad MoviePy 2.0: Se elimin贸 el argumento 'verbose' (deprecado) que causaba excepciones cr铆ticas en la extracci贸n de audio.
+     b) Adaptaci贸n Ling眉铆stica: El modelo inicial (ingl茅s) generaba falsos negativos ("neutral") en frases en espa帽ol. Se migr贸 a 'bert-base-multilingual-uncased-emotion' logrando discriminaci贸n correcta de polaridad.
+   - Resultados de Validaci贸n:
+     - Script: src/test_audio_module_day2.py
+     - Salida: JSON generado en /results/audio_analysis_video1.json.
+     - Precisi贸n: Se verific贸 la detecci贸n de 'joy' (alegr铆a, score 0.89) y 'anger' (ira, score 0.94) coincidiendo con el contenido sem谩ntico del video de prueba.

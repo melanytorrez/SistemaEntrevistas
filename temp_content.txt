@@ -1,0 +1,394 @@
+﻿Num Pages: 13
+--- Page 1 ---
+Univ ersidad Cat¾lica Boliviana
+Sistemas In teligen tes
+Examen Primera Sesi¾n:
+Sistema de Anßlisis de En trevistas
+Este do cumen to con tiene las esp ecicaciones tÚcnicas detalladas, r·bricas de ev aluaci¾n
+y guÝas de implemen taci¾n para el sistema in tegrado con mo delos a v anzados.
+--- Page 2 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 1
+═ndice
+1. Informaci¾n General del Pro y ecto 2
+1.1. Ob jetiv o . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+2. Estrategia de Datasets y Mo delos 2
+3. Cronograma Detallado (5 DÝas) - Carga Equilibrada 3
+4. Resp onsabilidades Equilibradas - Sin Roles Fijos 5
+5. Requisitos TÚcnicos con Mo delos Preen trenados 7
+6. R·brica de Ev aluaci¾n Equitativ a (100 pun tos) 8
+7. R·bricas de Ev aluaci¾n Detalladas 9
+7.1. R·brica General (100 pun tos) . . . . . . . . . . . . . . . . . . . . . . . . . 9
+7.2. Escala de Calicaci¾n Final . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+8. Consideraciones Finales y Ev aluaci¾n 11
+8.1. Criterios de ╔xito del Pro y ecto . . . . . . . . . . . . . . . . . . . . . . . . 11
+8.2. Distribuci¾n del Pun ta je Final . . . . . . . . . . . . . . . . . . . . . . . . . 11
+8.3. Lineamien tos para la Presen taci¾n Final . . . . . . . . . . . . . . . . . . . 11
+--- Page 3 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 2
+Informaci¾n General del Pro y ecto
+Con texto: En este examen, dise±arßn e implemen tarßn un sistema in teligen te m ulti-
+mo dal que analice en trevistas com binando recono cimien to facial de emo ciones (CNN),
+transcrip ci¾n y anßlisis de texto (T ransformers), y anßlisis temp oral (Series de Tiemp o).
+Ob jetiv o
+Ob jetiv o Principal: Desarrollar un prototip o funcional que utilice mo delos preen trena-
+dos in teligen temen te para prop orcionar insights sobre en trevistas, demostrando in tegra-
+ci¾n de m ·ltiples tÚcnicas de IA sin necesidad de en trenar mo delos desde cero.
+Estrategia de Datasets y Mo delos
+FilosofÝa: In tegraci¾n In teligen te, No En trenamien to Extensiv o
+Cuadro 1: Estrategia Recomendada para 5 DÝas
+Comp onen te Mo delo Preen trenado Su-
+gerido
+Dataset de V alidaci¾n
+Recono cimien to F a-
+cial
+DeepF ace / FER-2013 pre-
+trained
+3-5 videos propios (30 seg
+c/u)
+T ranscrip ci¾n Audio Whisp er (Op enAI) / W a v2V ec
+2.0 /v osk
+Audio extraÝdo de videos
+propios
+Anßlisis de T exto RoBER T a-emotion / BER T
+m ultilingual
+T ranscrip ci¾n generada
+Anßlisis T emp oral Series de tiemp o man ual / pan-
+das
+Emo ciones extraÝdas p or
+frame
+¥P or quÚ NO en trenar desde cero?
+Tiemp o limitado : En trenar CNN desde cero requiere 2-3 dÝas mÝnimo
+Recursos : No to dos tienen acceso a GPUs p oten tes
+F o co educativ o : La in tegraci¾n m ultimo dal es el ob jetiv o principal
+Enfo que profesional : En la industria se usan mo delos preen trenados frecuen te-
+men te
+--- Page 4 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 3
+Dataset de V alidaci¾n Propio (OBLIGA TORIO):
+Cada equip o deb e crear 3-5 videos cortos (30-60 segundos) donde:
+1. Un miem bro m uestre emo ciones claras mien tras habla
+2. Se etiquete man ualmen te los cam bios emo cionales
+3. Sirv a para demostrar el funcionamien to del sistema in tegrado
+Cronograma Detallado (5 DÝas) - Carga Equilibrada
+DÝa 1: Conguraci¾n y Planicaci¾n Colab orativ a
+A ctividades Concurren tes (to dos traba jan):
+Grup o A (2 estudian tes) Grup o B (2-3 estudian tes)
+Congurar en torno Python/Colab
+Instalar Op enCV, DeepF ace
+Probar detecci¾n facial bßsica
+Crear script de extracci¾n de fra-
+mes
+Congurar Whisp er/HuggingF ace
+Probar transcrip ci¾n de audio
+In v estigar mo delos de anßlisis de
+texto
+Dise±ar estructura de datos
+Reuni¾n Final DÝa 1 :
+Compartir progresos
+Denir in terfaz en tre m¾ dulos
+Asignar tareas para DÝa 2
+En tregable: Am bien te funcionando + prototip o bßsico de am b os m¾ dulos + Bitßcora
+Do cumen taci¾n
+DÝa 2: Desarrollo P aralelo de M¾ dulos
+A ctividades p or Rol Rotatorio (to dos co dican):
+--- Page 5 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 4
+M¾ dulo
+CNN/Emo ciones
+M¾ dulo Audio/T exto M¾ dulo Utilidades
+In tegrar DeepF ace
+Pro cesar video frame
+p or frame
+Extraer serie temp o-
+ral emo ciones
+Visualizar resultados
+Implemen tar Whis-
+p er
+Sincronizar audio-
+video
+Analizar texto con
+T ransformers
+Extraer emo ciones
+del texto
+Grabar videos v ali-
+daci¾n
+Crear funciones hel-
+p ers
+Dise±ar estructura
+JSON salida
+Congurar logging
+Rotaci¾n de Roles: Cada estudian te traba ja en cada m¾ dulo
+En tregable: T res m¾ dulos funcionando indep endien temen te
+DÝa 3: In tegraci¾n y Sincronizaci¾n
+A ctividades de In tegraci¾n (traba jo en parejas):
+1. P areja 1 : Sincronizar timestamps video-audio
+2. P areja 2 : F usionar emo ciones faciales y de texto
+3. P areja 3 (si ha y 5 ░ ): Crear visualizaciones in tegradas
+4. T o dos : Resolv er dep endencias en tre m¾ dulos
+En tregable: Pip eline in tegrado end-to-end funcionando
+DÝa 4: Anßlisis T emp oral y Mejoras
+A ctividades TÚcnicas :
+--- Page 6 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 5
+Anßlisis A v anzado Optimizaci¾n y T esting
+Implemen tar detecci¾n cam bios
+emo cionales
+Calcular mÚtricas de congruencia
+Generar insigh ts automßticos
+Crear rep orte de anßlisis
+Optimizar v elo cidad pro cesamien-
+to
+Manejar condiciones in usuales o
+excep cionales (limitaciones del sis-
+tema)
+Probar con videos v alidaci¾n
+Crear ejemplos de uso
+En tregable: Sistema optimizado + anßlisis de resultados
+DÝa 5: Renamien to y Do cumen taci¾n Colab orativ a
+Distribuci¾n de Do cumen taci¾n (to dos do cumen tan):
+1. Estudian te 1 : Do cumen tar m¾ dulo CNN y setup
+2. Estudian te 2 : Do cumen tar m¾ dulo Audio/T exto
+3. Estudian te 3 : Do cumen tar in tegraci¾n y uso
+4. Estudian te 4 : Crear video demostraci¾n (3-5 min)
+5. Estudian te 5 (si aplica): Preparar presen taci¾n resultados
+En tregable Final: Rep ositorio completo + informe tÚcnico + video demo
+Resp onsabilidades Equilibradas - Sin Roles Fijos
+--- Page 7 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 6
+Principio: T o dos Co dican, T o dos Do cumen tan
+Cuadro 2: Distribuci¾n Equitativ a de T raba jo TÚcnico
+DÝa T areas TÚcnicas (to dos par-
+ticipan)
+T areas de Co ordinaci¾n (ro-
+tativ as)
+DÝa 1
+Setup tÚcnico
+Pruebas mo delos
+Dise±o arquitectura
+LÝder tÚcnico : Organizar
+reuni¾n
+Do cumen tador : T omar
+notas decisiones
+QA : V ericar instalacio-
+nes
+DÝa 2
+Desarrollo m¾ dulos
+Pruebas unitarias
+In tegraci¾n inicial
+LÝder in tegraci¾n : Co or-
+dinar in terfaces
+Do cumen tador : A ctuali-
+zar README
+QA : Revisar c¾ digo com-
+pa±eros
+DÝa 3
+F usi¾n m ultimo dal
+Sincronizaci¾n
+Pruebas in tegraci¾n
+LÝder testing : Organizar
+pruebas
+Do cumen tador : Do cu-
+men tar APIs
+QA : Rep ortar bugs
+DÝa 4
+Anßlisis a v anzado
+Optimizaci¾n
+Generaci¾n insigh ts
+LÝder anßlisis : Sin tetizar
+resultados
+Do cumen tador : Prepa-
+rar grßcos
+QA : V alidar mÚtricas
+DÝa 5
+Renamien to nal
+Preparaci¾n demo
+Revisi¾n c¾ digo
+LÝder en trega : V ericar
+completitud
+Do cumen tador : Finali-
+zar informe
+QA : Asegurar calidad -
+nal
+--- Page 8 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 7
+Sistema de Rotaci¾n de Resp onsabilidades:
+Cada dÝa se asignan 3 roles rotativ os
+Nadie puede rep etir el mismo rol consecutiv amen te
+T o dos deb en pasar p or al menos 2 roles diferen tes
+La co ordinaci¾n es resp onsabilidad colectiv a
+Den tro del do cumen to se deb e resumir las resp onsabilidades
+Requisitos TÚcnicos con Mo delos Preen trenados
+Stac k T ecnol¾gico Obligatorio:
+1. Mo delo CNN Preen trenado : DeepF ace o equiv alen te
+2. Mo delo ASR Preen trenado : Whisp er o W a v2V ec 2.0 o v osk
+3. Mo delo NLP Preen trenado : T ransformers para anßlisis emo cional texto
+4. Mo delo GR U o LSMT : Series temp orales de emo ci¾n
+5. Videos V alidaci¾n : 3-5 videos propios (creados p or el equip o)
+6. In tegraci¾n : Pip eline completo funcionando end-to-end
+--- Page 9 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 8
+R·brica de Ev aluaci¾n Equitativ a (100 pun tos)
+Cuadro 3: R·brica con Ev aluaci¾n Individual y Grupal
+CategorÝa Pun tos Criterios de Ev aluaci¾n
+F uncionalidad Gru-
+pal
+25
+Sistema completamen te funcional: 10
+pts
+In tegraci¾n CNN-T ransformers: 8 pts
+Anßlisis temp oral implemen tado: 4 pts
+Insigh ts generados automßticamen te: 3
+pts
+Calidad TÚcnica In-
+dividual
+25
+Con tribuci¾n de c¾ digo signicativ a: 8
+pts
+Calidad de c¾ digo (legibilidad, comen-
+tarios): 7 pts
+P articipaci¾n en revisiones de c¾ digo: 5
+pts
+Resoluci¾n de problemas tÚcnicos: 5 pts
+Inno v aci¾n y Anßli-
+sis
+20
+Soluciones creativ as a problemas: 7 pts
+Anßlisis de resultados in teresan te: 7 pts
+Mejoras sobre implemen taci¾n bßsica:
+6 pts
+Do cumen taci¾n
+Colab orativ a
+15
+Do cumen taci¾n tÚcnica completa: 5 pts
+Instrucciones claras de uso: 4 pts
+Video demostraci¾n de calidad: 3 pts
+Distribuci¾n equitativ a de tareas do c:
+3 pts
+T raba jo en Equip o 15
+Distribuci¾n equitativ a de traba jo (Git
+logs): 6 pts
+Com unicaci¾n efectiv a: 5 pts
+Resoluci¾n colab orativ a de problemas:
+4 pts
+--- Page 10 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 9
+R·bricas de Ev aluaci¾n Detalladas
+R·brica General (100 pun tos)
+Criterio Pun tos Excelen te (90-100 %) Sucien te (60-70 %)
+1. Calidad TÚcnica (40 pts) 40
+Implemen taci¾n correcta 10 T o dos los comp onen tes
+funcionan p erfectamen te
+Comp onen tes bßsicos
+funcionan
+F undamen taci¾n te¾rica 10 Explicaci¾n matemßtica
+completa
+Explicaci¾n bßsica pre-
+sen te
+V alidaci¾n rigurosa 10 M·ltiples mÚto dos de v a-
+lidaci¾n
+V alidaci¾n bßsica realiza-
+da
+Manejo de errores 5 Robustez fren te a to dos
+los casos
+Manejo bßsico de errores
+Optimizaci¾n 5 C¾ digo altamen te opti-
+mizado
+C¾ digo funcional p ero no
+optimizado
+2. T raba jo en Equip o (20 pts) 20
+Colab oraci¾n efectiv a 5 Com unicaci¾n excelen te,
+ap o y o m utuo
+Com unicaci¾n bßsica
+Distribuci¾n equilibrada 5 Roles claros, resp onsabi-
+lidades compartidas
+Algunos desbalances
+In tegraci¾n de comp onen tes 5 In tegraci¾n p erfecta, co-
+herencia total
+In tegraci¾n bßsica logra-
+da
+Resoluci¾n de conictos 5 Manejo constructiv o, so-
+luciones creativ as
+Conictos resueltos bßsi-
+camen te
+3. Do cumen taci¾n (20 pts) 20
+Completitud 5 T o das las secciones com-
+pletas y detalladas
+Secciones principales
+completas
+Claridad 5 Explicaciones excep cio-
+nalmen te claras
+Explicaciones comprensi-
+bles
+Organizaci¾n 5 Estructura l¾gica y pro-
+fesional
+Estructura bßsicamen te
+organizada
+Repro ducibilidad 5 Instrucciones exactas pa-
+ra replicaci¾n
+Instrucciones generales
+presen tes
+4. Presen taci¾n (20 pts) 20
+Estructura presen taci¾n 5 Flujo l¾gico, atractiv o vi-
+sual
+Estructura bßsica pre-
+sen te
+Calidad visual 5 Grßcos profesionales,
+dise±o excelen te
+Grßcos bßsicos presen-
+tes
+Com unicaci¾n oral 5 Claridad, conanza, do-
+minio total
+Com unicaci¾n bßsica-
+men te clara
+Respuestas pregun tas 5 Respuestas profundas,
+cono cimien to completo
+Respuestas adecuadas
+TOT AL 100
+Cuadro 4: R·brica general de ev aluaci¾n
+--- Page 11 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 10
+Escala de Calicaci¾n Final
+Calicaci¾n Final = 0,6 Î Promedio Individual + 0,4 Î Calicaci¾n Pro y ecto
+Excelen te (90-100): Sistema completo funcional, in tegraci¾n imp ecable, do cumen-
+taci¾n excep cional
+Muy Bueno (80-89): Sistema funcional con p eque±as mejoras p osibles, buena
+in tegraci¾n
+Bueno (70-79): Sistema bßsicamen te funcional, algunos comp onen tes mejorables
+Sucien te (60-69): Sistema funciona parcialmen te, necesita mejoras signicativ as
+Insucien te (<60): Sistema no funciona o falta in tegraci¾n esencial
+--- Page 12 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 11
+Consideraciones Finales y Ev aluaci¾n
+Criterios de ╔xito del Pro y ecto
+El pro y ecto se considerarß exitoso si cumple:
+1. F uncionalidad completa: Sistema pro cesa datos y genera predicciones coheren tes
+2. In tegraci¾n efectiv a: Comp onen tes traba jan conjun tamen te de forma uida
+3. V alidaci¾n empÝrica: Predicciones con error aceptable
+4. Escalabilidad: Sistema puede pro cesar en trevistas
+5. Usabilidad: In terfaz clara y do cumen taci¾n sucien te para uso p or terceros
+6. Inno v aci¾n: Ap ortes creativ os
+Distribuci¾n del Pun ta je Final
+Comp onen te P onderaci¾n Pun tos
+Pun ta je individual (promedio) 60 % 60
+Calidad del sistema in tegrado 20 % 20
+Do cumen taci¾n y presen taci¾n 15 % 15
+Inno v aci¾n y creatividad 5 % 5
+TOT AL 100 % 100
+Lineamien tos para la Presen taci¾n Final
+Duraci¾n: 20 min utos (15 presen taci¾n + 5 pregun tas)
+Estructura sugerida:
+1. In tro ducci¾n (3 min): Problema, ob jetiv os, motiv aci¾n
+2. Dataset de prueba y prepro cesamien to (4 min): DesafÝos, decisiones tÚcnicas
+3. Mo delo CNN (4 min): Arquitecturas, ev aluaci¾n
+4. Mo delo T ransformer: Arquitecturas, ev aluaci¾n
+5. Mo delo RNN(3 min): Demostraci¾n, casos de estudio
+6. Conclusiones (2 min): Lecciones aprendidas, traba jo futuro
+Requisitos de participaci¾n:
+--- Page 13 ---
+Prßctica In tegrada A v anzada: Sistema de Anßlisis de En trevistas 12
+T o dos los miem bros deb en hablar duran te la presen taci¾n
+Incluir demostraci¾n en viv o del sistema
+Preparar respuestas para pregun tas tÚcnicas
+Usar visualizaciones descriptiv as y claras
+T o dos sab en el completo del traba jo
+¢╔xito en la implemen taci¾n del sistema in tegrado!

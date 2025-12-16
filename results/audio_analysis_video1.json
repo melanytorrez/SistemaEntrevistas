@@ -1,0 +1,47 @@
+[
+    {
+        "start": 0.0,
+        "end": 7.5,
+        "text": "Hola, estoy grabando este video para probar el sistema. La verdad estoy muy emocionado",
+        "emotion": {
+            "label": "joy",
+            "score": 0.898501455783844
+        }
+    },
+    {
+        "start": 7.5,
+        "end": 13.5,
+        "text": "porque la arquitectura que planteamos es increíble. O sea, The Face and Whisper es una gran idea.",
+        "emotion": {
+            "label": "others",
+            "score": 0.9433316588401794
+        }
+    },
+    {
+        "start": 22.0,
+        "end": 27.68,
+        "text": "Lo que me molesta es que mi computadora está muy lenta hoy. Es una septápnic que se puede",
+        "emotion": {
+            "label": "anger",
+            "score": 0.9445247054100037
+        }
+    },
+    {
+        "start": 27.68,
+        "end": 32.68,
+        "text": "cuando estiendo popular audio perder tiempo de configuraciones básicas.",
+        "emotion": {
+            "label": "others",
+            "score": 0.9953042268753052
+        }
+    },
+    {
+        "start": 42.68,
+        "end": 47.68,
+        "text": "Bueno, espero que esto se disulucione pronto parando de continuación.",
+        "emotion": {
+            "label": "others",
+            "score": 0.9326207041740417
+        }
+    }
+]
