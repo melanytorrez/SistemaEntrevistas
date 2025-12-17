@@ -88,7 +88,6 @@ ESTADO: COMPLETADO
      - Script: src/test_audio_module_day2.py
      - Salida: JSON generado en /results/audio_analysis_video1.json.
      - Precisión: Se verificó la detección de 'joy' (alegría, score 0.89) y 'anger' (ira, score 0.94) coincidiendo con el contenido semántico del video de prueba.
-     
 ======================================================================
 DIA 3: INTEGRACION Y SINCRONIZACION
 Fecha: 17/12/2025
@@ -113,3 +112,17 @@ ESTADO: COMPLETADO
     b) Mapeo de Polaridad: Conversión de etiquetas discretas (happy, sad, neutral) a valores numéricos (+1, 0, -1) para representación en Eje Y.
     c) Indicador Visual de Congruencia: Uso de zonas de fondo coloreadas (Verde = Coherente / Rojo = Incongruente) basadas en el análisis lógico del paso anterior.
   - Entregable Final: Imagen 'final_integration_chart.png' generada correctamente, evidenciando la evolución temporal de ambas modalidades y las alertas de incongruencia.
+
+3. VISUALIZACIÓN AVANZADA (Overlay de Video) - [ADICIONAL]
+  - Archivo: src/visualization_overlay.py
+  - Funcionalidad: Generación de video mp4 con 'subtítulos inteligentes' quemados.
+  - Características:
+    a) Muestra Texto, Emoción de Audio y Emoción Facial sincronizados en tiempo real.
+    b) Alerta visual (Texto Rojo + Marco Rojo parpadeante) cuando el JSON reporta incongruencia.
+  - Resultado: Video demostrativo en /results/video1_analysis_overlay.mp4.
+
+4. ACTUALIZACIÓN PÓSTUMA Y REFINAMIENTO
+   a) Normalización de datos: Mapeo de etiqueta 'others' (NLP) a 'neutral' para consistencia con DeepFace.
+   b) Mejora en Visualización: Soporte para subtítulos multi-línea (ajuste de texto largo).
+   c) Audio en Video: Post-procesamiento con MoviePy para incluir el audio original en el video de salida.
+   d) Empaquetado: Generación de .zip para el video de overlay.

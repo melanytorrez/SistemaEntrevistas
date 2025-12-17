@@ -26,7 +26,7 @@
         ],
         "text_content": "porque la arquitectura que planteamos es increíble. O sea, The Face and Whisper es una gran idea.",
         "audio_analysis": {
-            "emotion": "others",
+            "emotion": "neutral",
             "confidence": 0.943331778049469
         },
         "visual_analysis": {
@@ -66,7 +66,7 @@
         ],
         "text_content": "cuando estiendo popular audio perder tiempo de configuraciones básicas.",
         "audio_analysis": {
-            "emotion": "others",
+            "emotion": "neutral",
             "confidence": 0.9953042268753052
         },
         "visual_analysis": {
@@ -86,7 +86,7 @@
         ],
         "text_content": "Bueno, espero que esto se disulucione pronto parando de continuación.",
         "audio_analysis": {
-            "emotion": "others",
+            "emotion": "neutral",
             "confidence": 0.9326208829879761
         },
         "visual_analysis": {
