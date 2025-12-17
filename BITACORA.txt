@@ -88,12 +88,28 @@ ESTADO: COMPLETADO
      - Script: src/test_audio_module_day2.py
      - Salida: JSON generado en /results/audio_analysis_video1.json.
      - Precisi贸n: Se verific贸 la detecci贸n de 'joy' (alegr铆a, score 0.89) y 'anger' (ira, score 0.94) coincidiendo con el contenido sem谩ntico del video de prueba.
-4. INTEGRACI覰 MULTIMODAL (D韆 3)
-   - Archivo: src/integration_module_day3.py
-   - Objetivo: Fusi髇 de streams de Audio y Visi髇.
-   - L骻ica implementada:
-     a) Carga de JSONs estandarizados (Vision y Audio).
-     b) B鷖queda temporal: Para cada segmento de audio [t_start, t_end], recupera frames coincidentes.
-     c) Algoritmo de decisi髇: Promedio de emociones visuales vs Emoci髇 del texto.
-     d) Detecci髇 de Incongruencias: Matriz de opuestos (ej. Texto Triste + Cara Feliz = Incongruencia).
-   - Resultado: Reporte integrado generado en /results/integrated_report_video1.json.
+     
+======================================================================
+DIA 3: INTEGRACION Y SINCRONIZACION
+Fecha: 17/12/2025
+ESTADO: COMPLETADO
+======================================================================
+
+1. IMPLEMENTACION DE LOGICA DE FUSION (PAREJAS 1 & 2)
+  - Archivo: src/integration_module_day3.py
+  - Objetivo: Fusi贸n de streams de Audio y Visi贸n (Sincronizaci贸n y Merge).
+  - L贸gica implementada:
+    a) Carga de JSONs estandarizados de las etapas previas.
+    b) B煤squeda Temporal: Algoritmo que recupera frames visuales dentro del intervalo [t_start, t_end] de cada frase de audio.
+    c) Algoritmo de Decisi贸n: Comparaci贸n entre la emoci贸n del texto (NLP) y la moda estad铆stica de las emociones faciales en ese lapso.
+    d) Matriz de Incongruencia: Implementaci贸n de reglas l贸gicas para detectar conflictos (ej. Texto 'Triste' + Cara 'Feliz' = Incongruencia).
+  - Resultado: Generaci贸n exitosa del reporte integrado en /results/integrated_report_video1.json.
+
+2. VISUALIZACION DE DATOS INTEGRADOS (PAREJA 3)
+  - Archivo: src/visualizer.py
+  - Objetivo: Generar representaci贸n gr谩fica comprensible para el usuario final (Visualizaci贸n Integrada).
+  - Implementaci贸n T茅cnica:
+    a) Uso de librer铆a Matplotlib para graficar series temporales multimodales.
+    b) Mapeo de Polaridad: Conversi贸n de etiquetas discretas (happy, sad, neutral) a valores num茅ricos (+1, 0, -1) para representaci贸n en Eje Y.
+    c) Indicador Visual de Congruencia: Uso de zonas de fondo coloreadas (Verde = Coherente / Rojo = Incongruente) basadas en el an谩lisis l贸gico del paso anterior.
+  - Entregable Final: Imagen 'final_integration_chart.png' generada correctamente, evidenciando la evoluci贸n temporal de ambas modalidades y las alertas de incongruencia.
