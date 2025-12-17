@@ -48,17 +48,25 @@ class AudioAnalyzer:
     def analyze_sentiment(self, text):
         """
         Paso 3: Analizar la emoción de un texto específico.
-        Retorna la emoción dominante y su score.
+        Retorna: (emoción_dominante, score_dominante, dict_todas_las_emociones)
         """
         try:
             # El modelo puede truncar textos muy largos
             preds = self.nlp_classifier(text[:512])[0]
+            
             # Ordenar de mayor a menor probabilidad
             preds_sorted = sorted(preds, key=lambda x: x['score'], reverse=True)
-            return preds_sorted[0]['label'], preds_sorted[0]['score']
+            
+            dom_label = preds_sorted[0]['label']
+            dom_score = preds_sorted[0]['score']
+            
+            # Crear diccionario simple {emocion: score}
+            all_emotions = {item['label']: float(item['score']) for item in preds}
+            
+            return dom_label, dom_score, all_emotions
         except Exception as e:
             logging.error(f"Error en NLP: {e}")
-            return "neutral", 0.0
+            return "neutral", 0.0, {}
 
     def process_video(self, video_path):
         """
@@ -90,17 +98,16 @@ class AudioAnalyzer:
                 continue
 
             # Obtener emoción del texto
-            emotion_label, emotion_score = self.analyze_sentiment(text)
+            dom_label, dom_score, all_emotions = self.analyze_sentiment(text)
 
-            # Estructura JSON final
+            # Estructura JSON final (Alineada con Vision Module)
             entry = {
-                "start": start,
-                "end": end,
+                "timestamp_start": start,
+                "timestamp_end": end,
                 "text": text,
-                "emotion": {
-                    "label": emotion_label,
-                    "score": float(emotion_score)
-                }
+                "dominant_emotion": dom_label,
+                "confidence": float(dom_score),
+                "all_emotions": all_emotions
             }
             results.append(entry)
 

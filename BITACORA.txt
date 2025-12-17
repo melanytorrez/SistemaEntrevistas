@@ -88,3 +88,12 @@ ESTADO: COMPLETADO
      - Script: src/test_audio_module_day2.py
      - Salida: JSON generado en /results/audio_analysis_video1.json.
      - PrecisiÃ³n: Se verificÃ³ la detecciÃ³n de 'joy' (alegrÃ­a, score 0.89) y 'anger' (ira, score 0.94) coincidiendo con el contenido semÃ¡ntico del video de prueba.
+4. INTEGRACIÓN MULTIMODAL (Día 3)
+   - Archivo: src/integration_module_day3.py
+   - Objetivo: Fusión de streams de Audio y Visión.
+   - Lógica implementada:
+     a) Carga de JSONs estandarizados (Vision y Audio).
+     b) Búsqueda temporal: Para cada segmento de audio [t_start, t_end], recupera frames coincidentes.
+     c) Algoritmo de decisión: Promedio de emociones visuales vs Emoción del texto.
+     d) Detección de Incongruencias: Matriz de opuestos (ej. Texto Triste + Cara Feliz = Incongruencia).
+   - Resultado: Reporte integrado generado en /results/integrated_report_video1.json.

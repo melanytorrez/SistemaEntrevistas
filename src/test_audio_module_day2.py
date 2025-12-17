@@ -29,7 +29,11 @@ def main():
     print("\n" + "="*40)
     print("RESULTADOS OBTENIDOS:")
     for item in results:
-        print(f"[{item['start']:.1f}s - {item['end']:.1f}s] {item['emotion']['label'].upper()} ({item['emotion']['score']:.2f})")
+        t_start = item['timestamp_start']
+        t_end = item['timestamp_end']
+        label = item['dominant_emotion'].upper()
+        score = item['confidence']
+        print(f"[{t_start:.1f}s - {t_end:.1f}s] {label} ({score:.2f})")
         print(f"   --> \"{item['text']}\"")
         print("-" * 20)
     print("="*40)

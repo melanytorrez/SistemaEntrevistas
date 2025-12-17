@@ -1,0 +1,102 @@
+[
+    {
+        "time_range": [
+            0.0,
+            7.5
+        ],
+        "text_content": "Hola, estoy grabando este video para probar el sistema. La verdad estoy muy emocionado",
+        "audio_analysis": {
+            "emotion": "joy",
+            "confidence": 0.8985018134117126
+        },
+        "visual_analysis": {
+            "dominant_emotion": "happy",
+            "avg_confidence": 43.020296555478126,
+            "frames_analyzed": 8
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Coherent"
+        }
+    },
+    {
+        "time_range": [
+            7.5,
+            13.5
+        ],
+        "text_content": "porque la arquitectura que planteamos es increíble. O sea, The Face and Whisper es una gran idea.",
+        "audio_analysis": {
+            "emotion": "others",
+            "confidence": 0.943331778049469
+        },
+        "visual_analysis": {
+            "dominant_emotion": "neutral",
+            "avg_confidence": 49.03872032960256,
+            "frames_analyzed": 6
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Coherent"
+        }
+    },
+    {
+        "time_range": [
+            22.0,
+            27.68
+        ],
+        "text_content": "Lo que me molesta es que mi computadora está muy lenta hoy. Es una septápnic que se puede",
+        "audio_analysis": {
+            "emotion": "anger",
+            "confidence": 0.9445245862007141
+        },
+        "visual_analysis": {
+            "dominant_emotion": "sad",
+            "avg_confidence": 88.40104064941406,
+            "frames_analyzed": 5
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Different but compatible"
+        }
+    },
+    {
+        "time_range": [
+            27.68,
+            32.68
+        ],
+        "text_content": "cuando estiendo popular audio perder tiempo de configuraciones básicas.",
+        "audio_analysis": {
+            "emotion": "others",
+            "confidence": 0.9953042268753052
+        },
+        "visual_analysis": {
+            "dominant_emotion": "sad",
+            "avg_confidence": 87.74181518554687,
+            "frames_analyzed": 5
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Neutral Match"
+        }
+    },
+    {
+        "time_range": [
+            42.68,
+            47.68
+        ],
+        "text_content": "Bueno, espero que esto se disulucione pronto parando de continuación.",
+        "audio_analysis": {
+            "emotion": "others",
+            "confidence": 0.9326208829879761
+        },
+        "visual_analysis": {
+            "dominant_emotion": "neutral",
+            "avg_confidence": 47.52371444702148,
+            "frames_analyzed": 5
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Coherent"
+        }
+    }
+]

@@ -1,47 +1,82 @@
 [
     {
-        "start": 0.0,
-        "end": 7.5,
+        "timestamp_start": 0.0,
+        "timestamp_end": 7.5,
         "text": "Hola, estoy grabando este video para probar el sistema. La verdad estoy muy emocionado",
-        "emotion": {
-            "label": "joy",
-            "score": 0.898501455783844
+        "dominant_emotion": "joy",
+        "confidence": 0.8985018134117126,
+        "all_emotions": {
+            "others": 0.05845088139176369,
+            "joy": 0.8985018134117126,
+            "sadness": 0.0016533707967028022,
+            "anger": 0.0007611789624206722,
+            "surprise": 0.02848152071237564,
+            "disgust": 0.0023668769281357527,
+            "fear": 0.009784232825040817
         }
     },
     {
-        "start": 7.5,
-        "end": 13.5,
+        "timestamp_start": 7.5,
+        "timestamp_end": 13.5,
         "text": "porque la arquitectura que planteamos es increíble. O sea, The Face and Whisper es una gran idea.",
-        "emotion": {
-            "label": "others",
-            "score": 0.9433316588401794
+        "dominant_emotion": "others",
+        "confidence": 0.943331778049469,
+        "all_emotions": {
+            "others": 0.943331778049469,
+            "joy": 0.04865768924355507,
+            "sadness": 0.0018417973769828677,
+            "anger": 0.0007235906668938696,
+            "surprise": 0.004005421884357929,
+            "disgust": 0.000558918050955981,
+            "fear": 0.0008808714337646961
         }
     },
     {
-        "start": 22.0,
-        "end": 27.68,
+        "timestamp_start": 22.0,
+        "timestamp_end": 27.68,
         "text": "Lo que me molesta es que mi computadora está muy lenta hoy. Es una septápnic que se puede",
-        "emotion": {
-            "label": "anger",
-            "score": 0.9445247054100037
+        "dominant_emotion": "anger",
+        "confidence": 0.9445245862007141,
+        "all_emotions": {
+            "others": 0.013596165925264359,
+            "joy": 0.0010884491493925452,
+            "sadness": 0.00477948784828186,
+            "anger": 0.9445245862007141,
+            "surprise": 0.0012755331117659807,
+            "disgust": 0.028345871716737747,
+            "fear": 0.006389979273080826
         }
     },
     {
-        "start": 27.68,
-        "end": 32.68,
+        "timestamp_start": 27.68,
+        "timestamp_end": 32.68,
         "text": "cuando estiendo popular audio perder tiempo de configuraciones básicas.",
-        "emotion": {
-            "label": "others",
-            "score": 0.9953042268753052
+        "dominant_emotion": "others",
+        "confidence": 0.9953042268753052,
+        "all_emotions": {
+            "others": 0.9953042268753052,
+            "joy": 0.000577324244659394,
+            "sadness": 0.001281281583942473,
+            "anger": 0.0011188536882400513,
+            "surprise": 0.001116622006520629,
+            "disgust": 0.00024374571512453258,
+            "fear": 0.0003579987969715148
         }
     },
     {
-        "start": 42.68,
-        "end": 47.68,
+        "timestamp_start": 42.68,
+        "timestamp_end": 47.68,
         "text": "Bueno, espero que esto se disulucione pronto parando de continuación.",
-        "emotion": {
-            "label": "others",
-            "score": 0.9326207041740417
+        "dominant_emotion": "others",
+        "confidence": 0.9326208829879761,
+        "all_emotions": {
+            "others": 0.9326208829879761,
+            "joy": 0.0016394868725910783,
+            "sadness": 0.01788458786904812,
+            "anger": 0.005335644818842411,
+            "surprise": 0.026662399992346764,
+            "disgust": 0.00203136820346117,
+            "fear": 0.013825641013681889
         }
     }
 ]
