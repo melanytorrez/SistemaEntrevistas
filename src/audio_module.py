@@ -58,10 +58,19 @@ class AudioAnalyzer:
             preds_sorted = sorted(preds, key=lambda x: x['score'], reverse=True)
             
             dom_label = preds_sorted[0]['label']
+            if dom_label == 'others':
+                dom_label = 'neutral'
+            
             dom_score = preds_sorted[0]['score']
             
             # Crear diccionario simple {emocion: score}
-            all_emotions = {item['label']: float(item['score']) for item in preds}
+            # Renombrar 'others' a 'neutral' también aquí
+            all_emotions = {}
+            for item in preds:
+                lbl = item['label']
+                if lbl == 'others':
+                    lbl = 'neutral'
+                all_emotions[lbl] = float(item['score'])
             
             return dom_label, dom_score, all_emotions
         except Exception as e:

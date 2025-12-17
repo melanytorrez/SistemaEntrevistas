@@ -15,7 +15,8 @@ EMOTION_MAP = {
     "joy": "happy",
     "sadness": "sad",
     "anger": "angry",
-    "others": "neutral" 
+    # "others" ya no existe, llega como "neutral"
+    "neutral": "neutral"
     # fear, surprise, disgust coinciden
 }
 

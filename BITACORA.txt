@@ -97,3 +97,17 @@ ESTADO: COMPLETADO
      c) Algoritmo de decisión: Promedio de emociones visuales vs Emoción del texto.
      d) Detección de Incongruencias: Matriz de opuestos (ej. Texto Triste + Cara Feliz = Incongruencia).
    - Resultado: Reporte integrado generado en /results/integrated_report_video1.json.
+
+5. VISUALIZACIÓN AVANZADA (Overlay de Video)
+   - Archivo: src/visualization_overlay.py
+   - Funcionalidad: Generación de video mp4 con 'subtítulos inteligentes' quemados.
+   - Características:
+     a) Muestra Texto, Emoción de Audio y Emoción Facial sincronizados en tiempo real.
+     b) Alerta visual (Texto Rojo + Marco Rojo parpadeante) cuando el JSON reporta incongruencia.
+   - Resultado: Video demostrativo en /results/video1_analysis_overlay.mp4.
+
+   - Actualización Póstuma (Día 3):
+     a) Normalización de datos: Mapeo de etiqueta 'others' (NLP) a 'neutral' para consistencia con DeepFace.
+     b) Mejora en Visualización: Soporte para subtítulos multi-línea (ajuste de texto largo).
+     c) Audio en Video: Post-procesamiento con MoviePy para incluir el audio original en el video de salida.
+     d) Empaquetado: Generación de .zip para el video de overlay.
