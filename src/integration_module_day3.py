@@ -2,15 +2,12 @@ import json
 import os
 import numpy as np
 
-# Configuración
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VISION_JSON = os.path.join(BASE_DIR, 'results', 'vision_analysis.json')
 AUDIO_JSON = os.path.join(BASE_DIR, 'results', 'audio_analysis_video1.json')
 OUTPUT_FILE = os.path.join(BASE_DIR, 'results', 'integrated_report_video1.json')
 
-# Mapeo de emociones (DeepFace vs NLP)
-# DeepFace: angry, disgust, fear, happy, sad, surprise, neutral
-# NLP (pysentimiento): anger, disgust, fear, joy, sadness, surprise, others
+
 EMOTION_MAP = {
     "joy": "happy",
     "sadness": "sad",
@@ -22,7 +19,7 @@ EMOTION_MAP = {
 
 def load_json(path):
     if not os.path.exists(path):
-        print(f"❌ Error: No se encuentra {path}")
+        print(f" Error: No se encuentra {path}")
         return []
     with open(path, 'r', encoding='utf-8') as f:
         return json.load(f)
@@ -34,7 +31,6 @@ def get_visual_emotions_in_range(vision_data, start_time, end_time):
     """
     frames_in_range = []
     for frame in vision_data:
-        # Usamos 'timestamp' del vision JSON
         t = frame['timestamp']
         if start_time <= t <= end_time:
             frames_in_range.append(frame)
@@ -42,8 +38,7 @@ def get_visual_emotions_in_range(vision_data, start_time, end_time):
     if not frames_in_range:
         return None
 
-    # Método: Promedio de confianza por emoción
-    # Acumulamos los scores de todos los frames
+    
     agg_scores = {}
     for frame in frames_in_range:
         emotions = frame['all_emotions']
@@ -52,11 +47,9 @@ def get_visual_emotions_in_range(vision_data, start_time, end_time):
                 agg_scores[emo] = 0.0
             agg_scores[emo] += score
             
-    # Promediamos
     count = len(frames_in_range)
     avg_scores = {k: v / count for k, v in agg_scores.items()}
     
-    # Encontramos la dominante
     dominant_visual = max(avg_scores, key=avg_scores.get)
     
     return {
@@ -69,19 +62,15 @@ def check_incongruence(audio_emo, visual_emo):
     """
     Verifica si las emociones chocan.
     """
-    # Normalizar emoción de audio al vocabulario de video
     normalized_audio = EMOTION_MAP.get(audio_emo, audio_emo)
     
-    # Reglas simples de incongruencia
-    # Si son iguales -> Coherente
+    
     if normalized_audio == visual_emo:
         return False, "Coherent"
     
-    # Si una es neutral -> Tolerable (no necesariamente incongruente)
     if normalized_audio == "neutral" or visual_emo == "neutral":
         return False, "Neutral Match"
         
-    # Casos opuestos claros
     opposites = {
         "happy": ["sad", "angry", "fear", "disgust"],
         "sad": ["happy", "surprise"],
@@ -100,12 +89,11 @@ def integrate_data():
     vision_data = load_json(VISION_JSON)
     audio_data = load_json(AUDIO_JSON)
     
-    print(f"📊 Datos cargados: {len(vision_data)} frames de visión, {len(audio_data)} segmentos de audio.")
+    print(f" Datos cargados: {len(vision_data)} frames de visión, {len(audio_data)} segmentos de audio.")
     
     integrated_results = []
     
     for segment in audio_data:
-        # Datos del audio
         t_start = segment['timestamp_start']
         t_end = segment['timestamp_end']
         text = segment['text']
@@ -115,7 +103,6 @@ def integrate_data():
         print(f"\n🔹 Analizando segmento: [{t_start}s - {t_end}s]")
         print(f"   🗣️ Audio: {audio_dom} ({audio_conf:.2f}) -> '{text}'")
         
-        # Buscar correspondencia visual
         visual_stats = get_visual_emotions_in_range(vision_data, t_start, t_end)
         
         if visual_stats:
@@ -123,9 +110,8 @@ def integrate_data():
             vis_conf = visual_stats['avg_scores'][vis_dom]
             frames_n = visual_stats['frame_count']
             
-            print(f"   👀 Visión ({frames_n} frames): Promedio={vis_dom} ({vis_conf:.2f})")
+            print(f"   Visión ({frames_n} frames): Promedio={vis_dom} ({vis_conf:.2f})")
             
-            # Chequeo de incongruencia
             is_incongruent, reason = check_incongruence(audio_dom, vis_dom)
             
             status_icon = "🚩" if is_incongruent else "✅"
@@ -149,9 +135,8 @@ def integrate_data():
                 }
             })
         else:
-            print("   ⚠️ No hay datos visuales suficientes para este rango.")
+            print(" No hay datos visuales suficientes para este rango.")
 
-    # Guardar reporte
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(integrated_results, f, indent=4, ensure_ascii=False)
         
