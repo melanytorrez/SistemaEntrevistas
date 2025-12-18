@@ -51,13 +51,17 @@ def process_video():
                 current_time = frame_count / fps
                 print(f"   Frame {frame_count}/{total_frames} ({current_time:.1f}s)... ", end="", flush=True)
                 
-                # Guardar frame temporalmente para DeepFace
-                temp_img = "temp_vision_frame.jpg"
-                cv2.imwrite(temp_img, frame)
+                # OPTIMIZACIÓN DÍA 4: Redimensionar si es muy grande para acelerar
+                height, width = frame.shape[:2]
+                if width > 640:
+                    scale = 640 / width
+                    frame_small = cv2.resize(frame, (640, int(height * scale)))
+                else:
+                    frame_small = frame
                 
                 try:
-                    # DeepFace analyze
-                    analysis = DeepFace.analyze(img_path=temp_img, 
+                    # OPTIMIZACIÓN DÍA 4: Pasar numpy array directo (evitar I/O de disco)
+                    analysis = DeepFace.analyze(img_path=frame_small, 
                                               actions=['emotion'], 
                                               detector_backend='opencv',
                                               enforce_detection=False,
@@ -87,10 +91,6 @@ def process_video():
                     
                 except Exception as e:
                     print(f"❌ Error: {e}")
-                
-                # Limpiar
-                if os.path.exists(temp_img):
-                    os.remove(temp_img)
             
             frame_count += 1
 
@@ -99,8 +99,6 @@ def process_video():
         
     finally:
         cap.release()
-        if os.path.exists("temp_vision_frame.jpg"):
-            os.remove("temp_vision_frame.jpg")
 
     # Guardar resultados
     print(f"💾 Guardando {len(results)} registros en {OUTPUT_PATH}...")
