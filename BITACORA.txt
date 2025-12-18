@@ -125,6 +125,7 @@ ESTADO: COMPLETADO
     b) Audio: Post-procesamiento con MoviePy para incluir el audio original.
   - Resultado: Video demostrativo en /results/video1_analysis_overlay.mp4.
 
+======================================================================
 DIA 4: ANÁLISIS AVANZADO Y OPTIMIZACIÓN
 Fecha: 18/12/2025
 ESTADO: COMPLETADO
@@ -134,17 +135,34 @@ ESTADO: COMPLETADO
    - Archivo: src/advanced_analysis_day4.py
    - Funcionalidades Implementadas:
      a) Detección de Cambios: Comparación secuencial de emociones (Previous vs Current).
-     b) Métricas Globales: Cálculo del 'Congruence Score' (100% en pruebas).
+     b) Métricas Globales: Cálculo del 'Congruence Score'.
      c) Insight Generator: Algoritmo basado en reglas que produce conclusiones en lenguaje natural ('Alta Coherencia', 'Estabilidad Emocional').
-   - Entregable: Generación automática de 'results/final_report_day4.md'.
+   - Entregable: Generación automática de reportes ejecutivos en formato Markdown.
 
-2. OPTIMIZACIÓN DE RENDIMIENTO (VISIÓN)
+2. OPTIMIZACIÓN DE RENDIMIENTO (CRITERIO PAG. 6)
    - Archivo: src/vision_module_day2.py
    - Mejoras Implementadas:
      a) In-Memory Processing: Se eliminó la escritura temporal en disco (I/O) pasando arrays numpy directamente a DeepFace.
-     b) Frame Resizing: Redimensionado automático a 640px de ancho si la entrada es mayor, acelerando la inferencia.
+     b) Frame Resizing: Redimensionado automático a 640px de ancho si la entrada es mayor, acelerando la inferencia de la CNN.
    - Resultado: Reducción significativa en tiempos de procesamiento frame a frame.
 
-3. CONTROL DE VERSIONES
-   - Branch: 'feature/day4-optimization' creada y pusheada a remoto.
-   - Estado: Código fusionado y estable.
+3. VALIDACIÓN Y PRUEBAS DE ESTRÉS (CRITERIO "MANEJO DE CONDICIONES INUSUALES")
+   Se ejecutó el pipeline completo sobre 3 escenarios distintos para validar la robustez del análisis de congruencia:
+
+   a) Escenario 1: VIDEO 1 (Base)
+      - Resultado: 100.00% Congruencia.
+      - Insight Generado: "Alta Coherencia". El sistema validó correctamente la alineación entre discurso y rostro.
+
+   b) Escenario 2: VIDEO 2 (Incongruencia Forzada - Edge Case)
+      - Resultado: 0.0% Congruencia.
+      - Insight Generado: "Baja Coherencia / Alerta".
+      - Validación: El sistema detectó exitosamente el conflicto extremo (ej. Texto 'Happy' vs Cara 'Sad/Fear'). Esto demuestra que el modelo no tiene sesgo hacia resultados positivos.
+
+   c) Escenario 3: VIDEO 3 (Caso Mixto)
+      - Resultado: 66.67% Congruencia.
+      - Insight Generado: "Coherencia Moderada".
+      - Validación: El sistema identificó divergencias puntuales (nerviosismo/duda) en un contexto mayormente coherente.
+
+4. CONTROL DE VERSIONES Y CIERRE
+   - Branch: 'feature/day4-optimization' fusionada.
+   - Sistema listo para empaquetado final (Día 5).
