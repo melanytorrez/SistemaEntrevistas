@@ -1,5 +1,5 @@
 # 📝 Reporte Avanzado de Análisis de Entrevista
-**Fecha de Generación:** 2025-12-17 21:58
+**Fecha de Generación:** 2025-12-17 22:16
 **Video Analizado:** video1.mp4
 
 ## 📊 Resumen Ejecutivo

@@ -1,0 +1,30 @@
+[
+    {
+        "timestamp_start": 0.5,
+        "timestamp_end": 2.5,
+        "text": "I am essentially very happy with the results we achieved.",
+        "dominant_emotion": "joy",
+        "confidence": 0.95
+    },
+    {
+        "timestamp_start": 3.0,
+        "timestamp_end": 5.0,
+        "text": "It was a fantastic experience for the whole team!",
+        "dominant_emotion": "joy",
+        "confidence": 0.98
+    },
+    {
+        "timestamp_start": 6.0,
+        "timestamp_end": 8.5,
+        "text": "I really love how everything turned out in the end.",
+        "dominant_emotion": "joy",
+        "confidence": 0.92
+    },
+    {
+        "timestamp_start": 9.0,
+        "timestamp_end": 11.0,
+        "text": "We are looking forward to the next challenge.",
+        "dominant_emotion": "joy",
+        "confidence": 0.88
+    }
+]
