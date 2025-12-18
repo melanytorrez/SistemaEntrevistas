@@ -124,3 +124,27 @@ ESTADO: COMPLETADO
     a) Normalización: Mapeo automático 'others' (NLP) -> 'neutral' para consistencia con DeepFace.
     b) Audio: Post-procesamiento con MoviePy para incluir el audio original.
   - Resultado: Video demostrativo en /results/video1_analysis_overlay.mp4.
+
+DIA 4: ANÁLISIS AVANZADO Y OPTIMIZACIÓN
+Fecha: 18/12/2025
+ESTADO: COMPLETADO
+======================================================================
+
+1. ANÁLISIS AVANZADO E INSIGHTS
+   - Archivo: src/advanced_analysis_day4.py
+   - Funcionalidades Implementadas:
+     a) Detección de Cambios: Comparación secuencial de emociones (Previous vs Current).
+     b) Métricas Globales: Cálculo del 'Congruence Score' (100% en pruebas).
+     c) Insight Generator: Algoritmo basado en reglas que produce conclusiones en lenguaje natural ('Alta Coherencia', 'Estabilidad Emocional').
+   - Entregable: Generación automática de 'results/final_report_day4.md'.
+
+2. OPTIMIZACIÓN DE RENDIMIENTO (VISIÓN)
+   - Archivo: src/vision_module_day2.py
+   - Mejoras Implementadas:
+     a) In-Memory Processing: Se eliminó la escritura temporal en disco (I/O) pasando arrays numpy directamente a DeepFace.
+     b) Frame Resizing: Redimensionado automático a 640px de ancho si la entrada es mayor, acelerando la inferencia.
+   - Resultado: Reducción significativa en tiempos de procesamiento frame a frame.
+
+3. CONTROL DE VERSIONES
+   - Branch: 'feature/day4-optimization' creada y pusheada a remoto.
+   - Estado: Código fusionado y estable.
