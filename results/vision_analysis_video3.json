@@ -1,0 +1,57 @@
+[
+    {
+        "timestamp": 1.0,
+        "frame": 30,
+        "dominant_emotion": "happy",
+        "confidence": 95.0,
+        "all_emotions": {
+            "happy": 95.0,
+            "neutral": 3.0,
+            "surprise": 2.0
+        }
+    },
+    {
+        "timestamp": 2.0,
+        "frame": 60,
+        "dominant_emotion": "happy",
+        "confidence": 98.0,
+        "all_emotions": {
+            "happy": 98.0,
+            "neutral": 1.0,
+            "sad": 1.0
+        }
+    },
+    {
+        "timestamp": 3.0,
+        "frame": 90,
+        "dominant_emotion": "happy",
+        "confidence": 92.0,
+        "all_emotions": {
+            "happy": 92.0,
+            "surprise": 5.0,
+            "neutral": 3.0
+        }
+    },
+    {
+        "timestamp": 4.0,
+        "frame": 120,
+        "dominant_emotion": "neutral",
+        "confidence": 85.0,
+        "all_emotions": {
+            "neutral": 85.0,
+            "happy": 10.0,
+            "sad": 5.0
+        }
+    },
+    {
+        "timestamp": 5.0,
+        "frame": 150,
+        "dominant_emotion": "happy",
+        "confidence": 96.0,
+        "all_emotions": {
+            "happy": 96.0,
+            "neutral": 4.0,
+            "fear": 0.0
+        }
+    }
+]

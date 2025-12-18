@@ -1,0 +1,23 @@
+[
+    {
+        "timestamp_start": 0.5,
+        "timestamp_end": 2.5,
+        "text": "I am absolutely thrilled about this opportunity.",
+        "dominant_emotion": "joy",
+        "confidence": 0.99
+    },
+    {
+        "timestamp_start": 2.8,
+        "timestamp_end": 4.5,
+        "text": "It matches my skills perfectly.",
+        "dominant_emotion": "joy",
+        "confidence": 0.95
+    },
+    {
+        "timestamp_start": 4.8,
+        "timestamp_end": 5.5,
+        "text": "Thank you.",
+        "dominant_emotion": "neutral",
+        "confidence": 0.90
+    }
+]
