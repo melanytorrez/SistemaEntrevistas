@@ -5,14 +5,15 @@ import time
 from deepface import DeepFace
 
 # Configuración
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VIDEO_PATH = os.path.join(BASE_DIR, 'data', 'video1.mp4')
-OUTPUT_DIR = os.path.join(BASE_DIR, 'results')
-OUTPUT_PATH = os.path.join(OUTPUT_DIR, 'vision_analysis.json')
+# Configuración
+from utils import CONFIG
+
+VIDEO_PATH = CONFIG["VIDEO_PATH"]
+OUTPUT_PATH = CONFIG["VISION_JSON"]
 SAMPLE_RATE = 1  # Analizar un frame cada 1 segundo
 
-if not os.path.exists(OUTPUT_DIR):
-    os.makedirs(OUTPUT_DIR)
+# if not os.path.exists(OUTPUT_DIR): # Ya lo crea utils.py
+#     os.makedirs(OUTPUT_DIR)
 
 def process_video():
     print(f"--- INICIANDO MÓDULO DE VISIÓN (Día 2) ---")

@@ -2,10 +2,12 @@ import json
 import os
 import datetime
 
+from utils import CONFIG
+
 # Rutas
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-INTEGRATED_JSON = os.path.join(BASE_DIR, 'results', 'integrated_report_video1.json')
-FINAL_REPORT_MD = os.path.join(BASE_DIR, 'results', 'final_report_day4.md')
+INTEGRATED_JSON = CONFIG["INTEGRATED_JSON"]
+FINAL_REPORT_MD = CONFIG["FINAL_REPORT"]
 
 class InterviewAnalyzer:
     def __init__(self, data_path):

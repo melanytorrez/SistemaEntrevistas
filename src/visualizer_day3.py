@@ -3,9 +3,11 @@ import json
 import os
 import numpy as np
 
+from utils import CONFIG
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-JSON_PATH = os.path.join(BASE_DIR, 'results', 'integrated_report_video1.json')
-OUTPUT_IMG = os.path.join(BASE_DIR, 'results', 'final_integration_chart.png')
+JSON_PATH = CONFIG["INTEGRATED_JSON"]
+OUTPUT_IMG = CONFIG["FINAL_CHART"]
 
 EMOTION_SCORES = {
     "happy": 1, "joy": 1, "surprise": 1,

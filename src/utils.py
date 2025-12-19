@@ -35,9 +35,31 @@ logger = setup_logger()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
+RESULTS_DIR = os.path.join(BASE_DIR, "results")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs(RESULTS_DIR, exist_ok=True)
 
+# --- CONFIGURACIÓN CENTRALIZADA (DÍA 5) ---
+VIDEO_NAME = "videoFinal.mp4" # <--- CAMBIAR AQUÍ PARA PROBAR OTROS VIDEOS
+SAFE_NAME = VIDEO_NAME.split('.')[0]
+
+CONFIG = {
+    "VIDEO_PATH": os.path.join(DATA_DIR, VIDEO_NAME),
+    "AUDIO_OUTPUT": os.path.join(OUTPUT_DIR, "temp_audio.wav"),
+    
+    # Archivos Intermedios
+    "VISION_JSON": os.path.join(RESULTS_DIR, f"vision_{SAFE_NAME}.json"),
+    "AUDIO_JSON": os.path.join(RESULTS_DIR, f"audio_{SAFE_NAME}.json"),
+    "INTEGRATED_JSON": os.path.join(RESULTS_DIR, f"integrated_{SAFE_NAME}.json"),
+    
+    # Reportes Finales
+    "FINAL_REPORT": os.path.join(RESULTS_DIR, f"report_{SAFE_NAME}.md"),
+    "FINAL_CHART": os.path.join(RESULTS_DIR, f"chart_{SAFE_NAME}.png"),
+    "OVERLAY_VIDEO": os.path.join(RESULTS_DIR, f"overlay_{SAFE_NAME}.mp4")
+}
+
+logger = setup_logger()
 
 def get_video_path(filename):
     """Devuelve la ruta absoluta de un video en la carpeta data"""

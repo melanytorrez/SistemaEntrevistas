@@ -1,0 +1,182 @@
+[
+    {
+        "time_range": [
+            0.0,
+            8.0
+        ],
+        "text_content": "Hola, muchas gracias por la oportunidad. La verdad es que estoy muy feliz de estar aquí.",
+        "audio_analysis": {
+            "emotion": "joy",
+            "confidence": 0.9937963485717773
+        },
+        "visual_analysis": {
+            "dominant_emotion": "happy",
+            "avg_confidence": 36.681435906845664,
+            "frames_analyzed": 9
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Coherent"
+        }
+    },
+    {
+        "time_range": [
+            8.0,
+            14.56
+        ],
+        "text_content": "Me encanta la visión de esta empresa y me siento super emocionada por los retos que proponen.",
+        "audio_analysis": {
+            "emotion": "joy",
+            "confidence": 0.9935198426246643
+        },
+        "visual_analysis": {
+            "dominant_emotion": "neutral",
+            "avg_confidence": 54.48651531764439,
+            "frames_analyzed": 7
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Neutral Match"
+        }
+    },
+    {
+        "time_range": [
+            14.56,
+            19.12
+        ],
+        "text_content": "Sin embargo, debo admitir que odio la burocracia. Me molesta mucho cuando los procesos son",
+        "audio_analysis": {
+            "emotion": "anger",
+            "confidence": 0.9313830733299255
+        },
+        "visual_analysis": {
+            "dominant_emotion": "sad",
+            "avg_confidence": 76.57142791748046,
+            "frames_analyzed": 5
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Different but compatible"
+        }
+    },
+    {
+        "time_range": [
+            19.12,
+            24.62
+        ],
+        "text_content": "lentos y la gente no responde los correos. Es frustrante, me pone de muy mal humor perder",
+        "audio_analysis": {
+            "emotion": "anger",
+            "confidence": 0.9459839463233948
+        },
+        "visual_analysis": {
+            "dominant_emotion": "sad",
+            "avg_confidence": 54.58202209472656,
+            "frames_analyzed": 5
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Different but compatible"
+        }
+    },
+    {
+        "time_range": [
+            24.62,
+            26.32
+        ],
+        "text_content": "el tiempo así.",
+        "audio_analysis": {
+            "emotion": "neutral",
+            "confidence": 0.7875805497169495
+        },
+        "visual_analysis": {
+            "dominant_emotion": "sad",
+            "avg_confidence": 51.904093503952026,
+            "frames_analyzed": 2
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Neutral Match"
+        }
+    },
+    {
+        "time_range": [
+            27.32,
+            35.74
+        ],
+        "text_content": "Si, mi última jefe era una persona maravillosa. Me trataba excelente y yo iba encantada",
+        "audio_analysis": {
+            "emotion": "joy",
+            "confidence": 0.9724260568618774
+        },
+        "visual_analysis": {
+            "dominant_emotion": "neutral",
+            "avg_confidence": 54.45040202140808,
+            "frames_analyzed": 8
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Neutral Match"
+        }
+    },
+    {
+        "time_range": [
+            35.74,
+            43.08
+        ],
+        "text_content": "a trabajar todos los días. Era el trabajo de mis sueños. En cuanto a mi disponibilidad,",
+        "audio_analysis": {
+            "emotion": "neutral",
+            "confidence": 0.9853658676147461
+        },
+        "visual_analysis": {
+            "dominant_emotion": "neutral",
+            "avg_confidence": 51.987899872049184,
+            "frames_analyzed": 8
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Coherent"
+        }
+    },
+    {
+        "time_range": [
+            43.08,
+            47.6
+        ],
+        "text_content": "puedo empezar el próximo lunes. Tengo los documentos listos y revisé el contrato.",
+        "audio_analysis": {
+            "emotion": "neutral",
+            "confidence": 0.9892109632492065
+        },
+        "visual_analysis": {
+            "dominant_emotion": "neutral",
+            "avg_confidence": 77.09943151473999,
+            "frames_analyzed": 4
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Coherent"
+        }
+    },
+    {
+        "time_range": [
+            47.6,
+            50.32
+        ],
+        "text_content": "Queda la espera de su confirmación.",
+        "audio_analysis": {
+            "emotion": "neutral",
+            "confidence": 0.9917899370193481
+        },
+        "visual_analysis": {
+            "dominant_emotion": "neutral",
+            "avg_confidence": 69.26476287841797,
+            "frames_analyzed": 3
+        },
+        "integration": {
+            "is_incongruent": false,
+            "status_message": "Coherent"
+        }
+    }
+]

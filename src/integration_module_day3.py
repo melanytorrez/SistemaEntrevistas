@@ -2,10 +2,12 @@ import json
 import os
 import numpy as np
 
+from utils import CONFIG
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VISION_JSON = os.path.join(BASE_DIR, 'results', 'vision_analysis.json')
-AUDIO_JSON = os.path.join(BASE_DIR, 'results', 'audio_analysis_video1.json')
-OUTPUT_FILE = os.path.join(BASE_DIR, 'results', 'integrated_report_video1.json')
+VISION_JSON = CONFIG["VISION_JSON"]
+AUDIO_JSON = CONFIG["AUDIO_JSON"]
+OUTPUT_FILE = CONFIG["INTEGRATED_JSON"]
 
 
 EMOTION_MAP = {

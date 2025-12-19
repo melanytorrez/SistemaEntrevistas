@@ -1,0 +1,146 @@
+[
+    {
+        "timestamp_start": 0.0,
+        "timestamp_end": 8.0,
+        "text": "Hola, muchas gracias por la oportunidad. La verdad es que estoy muy feliz de estar aquí.",
+        "dominant_emotion": "joy",
+        "confidence": 0.9937963485717773,
+        "all_emotions": {
+            "neutral": 0.0025818583089858294,
+            "joy": 0.9937963485717773,
+            "sadness": 0.0006063433829694986,
+            "anger": 0.000273912213742733,
+            "surprise": 0.001443739514797926,
+            "disgust": 0.0006970050162635744,
+            "fear": 0.0006008779164403677
+        }
+    },
+    {
+        "timestamp_start": 8.0,
+        "timestamp_end": 14.56,
+        "text": "Me encanta la visión de esta empresa y me siento super emocionada por los retos que proponen.",
+        "dominant_emotion": "joy",
+        "confidence": 0.9935198426246643,
+        "all_emotions": {
+            "neutral": 0.0014846146805211902,
+            "joy": 0.9935198426246643,
+            "sadness": 0.00040361209539696574,
+            "anger": 0.00025721400743350387,
+            "surprise": 0.0025266483426094055,
+            "disgust": 0.0007113585015758872,
+            "fear": 0.0010967584094032645
+        }
+    },
+    {
+        "timestamp_start": 14.56,
+        "timestamp_end": 19.12,
+        "text": "Sin embargo, debo admitir que odio la burocracia. Me molesta mucho cuando los procesos son",
+        "dominant_emotion": "anger",
+        "confidence": 0.9313830733299255,
+        "all_emotions": {
+            "neutral": 0.00920029729604721,
+            "joy": 0.0016309632919728756,
+            "sadness": 0.003944735508412123,
+            "anger": 0.9313830733299255,
+            "surprise": 0.0007448417600244284,
+            "disgust": 0.05048515275120735,
+            "fear": 0.0026108440943062305
+        }
+    },
+    {
+        "timestamp_start": 19.12,
+        "timestamp_end": 24.62,
+        "text": "lentos y la gente no responde los correos. Es frustrante, me pone de muy mal humor perder",
+        "dominant_emotion": "anger",
+        "confidence": 0.9459839463233948,
+        "all_emotions": {
+            "neutral": 0.002792277606204152,
+            "joy": 0.0006641108193434775,
+            "sadness": 0.0037738250102847815,
+            "anger": 0.9459839463233948,
+            "surprise": 0.0011954999063163996,
+            "disgust": 0.03886266052722931,
+            "fear": 0.006727640517055988
+        }
+    },
+    {
+        "timestamp_start": 24.62,
+        "timestamp_end": 26.32,
+        "text": "el tiempo así.",
+        "dominant_emotion": "neutral",
+        "confidence": 0.7875805497169495,
+        "all_emotions": {
+            "neutral": 0.7875805497169495,
+            "joy": 0.14924143254756927,
+            "sadness": 0.035167139023542404,
+            "anger": 0.0041693574748933315,
+            "surprise": 0.01764708198606968,
+            "disgust": 0.0021264664828777313,
+            "fear": 0.004068001173436642
+        }
+    },
+    {
+        "timestamp_start": 27.32,
+        "timestamp_end": 35.74,
+        "text": "Si, mi última jefe era una persona maravillosa. Me trataba excelente y yo iba encantada",
+        "dominant_emotion": "joy",
+        "confidence": 0.9724260568618774,
+        "all_emotions": {
+            "neutral": 0.02140890061855316,
+            "joy": 0.9724260568618774,
+            "sadness": 0.0005819843499921262,
+            "anger": 0.0008530110353603959,
+            "surprise": 0.0025339077692478895,
+            "disgust": 0.0012491550296545029,
+            "fear": 0.0009471240919083357
+        }
+    },
+    {
+        "timestamp_start": 35.74,
+        "timestamp_end": 43.08,
+        "text": "a trabajar todos los días. Era el trabajo de mis sueños. En cuanto a mi disponibilidad,",
+        "dominant_emotion": "neutral",
+        "confidence": 0.9853658676147461,
+        "all_emotions": {
+            "neutral": 0.9853658676147461,
+            "joy": 0.009789680130779743,
+            "sadness": 0.0022808860521763563,
+            "anger": 0.0007447061943821609,
+            "surprise": 0.0009459118591621518,
+            "disgust": 0.0002804918331094086,
+            "fear": 0.000592377851717174
+        }
+    },
+    {
+        "timestamp_start": 43.08,
+        "timestamp_end": 47.6,
+        "text": "puedo empezar el próximo lunes. Tengo los documentos listos y revisé el contrato.",
+        "dominant_emotion": "neutral",
+        "confidence": 0.9892109632492065,
+        "all_emotions": {
+            "neutral": 0.9892109632492065,
+            "joy": 0.004051083233207464,
+            "sadness": 0.0009670546278357506,
+            "anger": 0.0005316822789609432,
+            "surprise": 0.0031002620235085487,
+            "disgust": 0.0005215877899900079,
+            "fear": 0.0016172266332432628
+        }
+    },
+    {
+        "timestamp_start": 47.6,
+        "timestamp_end": 50.32,
+        "text": "Queda la espera de su confirmación.",
+        "dominant_emotion": "neutral",
+        "confidence": 0.9917899370193481,
+        "all_emotions": {
+            "neutral": 0.9917899370193481,
+            "joy": 0.0007660308037884533,
+            "sadness": 0.0019478090107440948,
+            "anger": 0.0007412636769004166,
+            "surprise": 0.0027778996154665947,
+            "disgust": 0.00045314853196032345,
+            "fear": 0.0015237319748848677
+        }
+    }
+]

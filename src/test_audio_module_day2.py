@@ -3,10 +3,13 @@ import os
 from audio_module import AudioAnalyzer
 
 # Rutas
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VIDEO_PATH = os.path.join(BASE_DIR, 'data', 'video1.mp4') # Usamos tu video 1
-OUTPUT_DIR = os.path.join(BASE_DIR, 'results') # Carpeta results (ya la tienes creada)
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'audio_analysis_video1.json')
+from audio_module import AudioAnalyzer
+from utils import CONFIG
+
+# Rutas
+VIDEO_PATH = CONFIG["VIDEO_PATH"]
+OUTPUT_FILE = CONFIG["AUDIO_JSON"]
+TEMP_AUDIO = CONFIG["AUDIO_OUTPUT"]
 
 def main():
     print("--- INICIANDO TEST DEL MÓDULO DE AUDIO (DÍA 2) ---")
@@ -16,11 +19,12 @@ def main():
     
     # 2. Procesar el video
     print(f"📂 Procesando: {VIDEO_PATH}")
+    # Nota: process_video usa internamente su propia lógica de temp audio, 
+    # pero le pasamos el path del video centralizado.
     results = analyzer.process_video(VIDEO_PATH)
     
     # 3. Guardar resultados
-    if not os.path.exists(OUTPUT_DIR):
-        os.makedirs(OUTPUT_DIR)
+    # Directory exist check moved to utils
         
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=4, ensure_ascii=False)

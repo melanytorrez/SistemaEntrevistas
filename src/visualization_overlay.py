@@ -4,10 +4,13 @@ import os
 import numpy as np
 
 # Configuración
+# Configuración
+from utils import CONFIG
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VIDEO_PATH = os.path.join(BASE_DIR, 'data', 'video1.mp4')
-REPORT_JSON = os.path.join(BASE_DIR, 'results', 'integrated_report_video1.json')
-OUTPUT_VIDEO = os.path.join(BASE_DIR, 'results', 'video1_analysis_overlay.mp4')
+VIDEO_PATH = CONFIG["VIDEO_PATH"]
+REPORT_JSON = CONFIG["INTEGRATED_JSON"]
+OUTPUT_VIDEO = CONFIG["OVERLAY_VIDEO"]
 
 # Colores (BGR)
 COLOR_TEXT = (255, 255, 255)       # Blanco
